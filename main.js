@@ -13,6 +13,24 @@ if (listaDepoimentos) {
 
 // Passo 20: envio do formulário de contato via POST
 const btnEnviar = document.getElementById('btn-enviar');
+// Busca de endereço pelo CEP
+const campoCep = document.getElementById('campo-cep');
+if (campoCep) {
+  campoCep.addEventListener('input ', async () => {
+    const cep = campoCep.value.replace(/\D/g, '');
+    if (cep.length !== 8) return;
+
+    const resposta = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+    const dados = await resposta.json();
+
+    if (!dados.erro) {
+      document.getElementById('campo-rua').value    = dados.logradouro;
+      document.getElementById('campo-bairro').value = dados.bairro;
+      document.getElementById('campo-cidade').value = dados.localidade;
+      document.getElementById('campo-estado').value = dados.uf;
+    }
+  });
+}
 if (btnEnviar) {
   btnEnviar.addEventListener('click', async () => {
     const nome = document.getElementById('campo-nome').value;

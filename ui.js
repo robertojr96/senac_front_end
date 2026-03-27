@@ -1,4 +1,5 @@
 // ui.js — manipulação do DOM (Passos 17, 18, 20)
+import { renderizarDepoimentos, exibirAlertaForm, preencherEndereco } from './ui.js';
 
 export function renderizarDepoimentos(dados) {
   const container = document.getElementById('lista-depoimentos');
@@ -21,4 +22,11 @@ export function exibirAlertaForm(sucesso, container) {
   container.innerHTML = sucesso
     ? `<div class="alert alert-success">Mensagem enviada com sucesso!</div>`
     : `<div class="alert alert-danger">Erro ao enviar. Tente novamente.</div>`;
+    
+}
+export function preencherEndereco(dados) {
+  document.getElementById('campo-rua').value    = dados.logradouro;
+  document.getElementById('campo-bairro').value = dados.bairro;
+  document.getElementById('campo-cidade').value = dados.localidade;
+  document.getElementById('campo-estado').value = dados.uf;
 }
