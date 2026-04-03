@@ -1,10 +1,11 @@
 // ui.js — manipulação do DOM (Passos 17, 18, 20)
-import { renderizarDepoimentos, exibirAlertaForm, preencherEndereco } from './ui.js';
 
 export function renderizarDepoimentos(dados) {
-  const container = document.getElementById('lista-depoimentos');
+  const container = document.getElementById("lista-depoimentos");
   if (!container) return;
-  container.innerHTML = dados.map(item => `
+  container.innerHTML = dados
+    .map(
+      (item) => `
     <div class="col-md-4 mb-3">
       <div class="card h-100">
         <div class="card-body">
@@ -14,7 +15,9 @@ export function renderizarDepoimentos(dados) {
         </div>
       </div>
     </div>
-  `).join('');
+  `,
+    )
+    .join("");
 }
 
 export function exibirAlertaForm(sucesso, container) {
@@ -22,11 +25,11 @@ export function exibirAlertaForm(sucesso, container) {
   container.innerHTML = sucesso
     ? `<div class="alert alert-success">Mensagem enviada com sucesso!</div>`
     : `<div class="alert alert-danger">Erro ao enviar. Tente novamente.</div>`;
-    
 }
+
 export function preencherEndereco(dados) {
-  document.getElementById('campo-rua').value    = dados.logradouro;
-  document.getElementById('campo-bairro').value = dados.bairro;
-  document.getElementById('campo-cidade').value = dados.localidade;
-  document.getElementById('campo-estado').value = dados.uf;
+  document.getElementById("campo-rua").value = dados.logradouro;
+  document.getElementById("campo-bairro").value = dados.bairro;
+  document.getElementById("campo-cidade").value = dados.localidade;
+  document.getElementById("campo-estado").value = dados.uf;
 }

@@ -44,7 +44,6 @@
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
-      <a href="carrinho.html" class="btn btn-warning ms-2">🛒 Carrinho (<span id="nav-qtd">0</span>)</a>
     </div>
   </div>
 </nav>
@@ -68,8 +67,7 @@
       <input type="number" class="form-control qtd-produto" value="1" min="1">
     </div>
     <a href="#" class="btn btn-primary">Comprar</a>
-<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalProduto"
-  data-nome="Casa 220m²" data-descricao="Casa espaçosa de 220m² com acabamento premium." data-preco="250000.00">Ver Detalhes</button></div>
+  </div>
 </div>
 
     </div>
@@ -88,11 +86,11 @@
       <input type="number" class="form-control qtd-produto" value="1" min="1">
     </div>
     <a href="#" class="btn btn-primary">Comprar</a>
-    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalProduto"
-  data-nome="Civic 2016" data-descricao="Honda Civic 2016 em ótimo estado, completo." data-preco="45000.00">Ver Detalhes</button> </div>
+  </div>
 </div>
     </div>
     <div class="col">
+     
 
 <div class="card" style="width: 18rem;">
   <img src="./img/sitio.jpg" class="card-img-top" alt="...">
@@ -108,8 +106,7 @@
       <input type="number" class="form-control qtd-produto" value="1" min="1">
     </div>
     <a href="#" class="btn btn-primary">Comprar</a>
-    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalProduto"
-  data-nome="Sítio 1000m²" data-descricao="Sítio tranquilo de 1000m² com nascente e área verde." data-preco="150000.00">Ver Detalhes</button></div>
+  </div>
 </div>
     </div>
   </div>
@@ -122,60 +119,5 @@
   </div>
 </div>
 <script src="script.js"></script>
-<script>
-  function adicionarAoCarrinho(id, nome, preco, btn) {
-    const card = btn.closest('.card');
-    const qtd = parseInt(card.querySelector('.qtd-produto').value) || 1;
-
-    let carrinho = JSON.parse(localStorage.getItem('carrinho') || '[]');
-    const existente = carrinho.find(i => i.id === id);
-    if (existente) {
-      existente.qtd += qtd;
-    } else {
-      carrinho.push({ id, nome, preco, qtd });
-    }
-    localStorage.setItem('carrinho', JSON.stringify(carrinho));
-
-    atualizarContadorNav();
-    alert(qtd + 'x ' + nome + ' adicionado ao carrinho!');
-  }
-
-  function atualizarContadorNav() {
-    const carrinho = JSON.parse(localStorage.getItem('carrinho') || '[]');
-    const total = carrinho.reduce((s, i) => s + i.qtd, 0);
-    document.getElementById('nav-qtd').textContent = total;
-  }
-
-  atualizarContadorNav();
-  // Modal dinâmico
-document.getElementById('modalProduto').addEventListener('show.bs.modal', function (event) {
-  const botao = event.relatedTarget;
-  const nome = botao.getAttribute('data-nome');
-  const descricao = botao.getAttribute('data-descricao');
-  const preco = parseFloat(botao.getAttribute('data-preco'));
-
-  document.getElementById('modalProdutoLabel').textContent = nome;
-  document.getElementById('modalProdutoBody').innerHTML = `
-    <p>${descricao}</p>
-    <p><strong>Preço: R$ ${preco.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</strong></p>
-  `;
-});
-</script>
-<!-- Modal vazio — conteúdo injetado via JavaScript -->
-<div class="modal fade" id="modalProduto" tabindex="-1" aria-labelledby="modalProdutoLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="modalProdutoLabel"></h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-      </div>
-      <div class="modal-body" id="modalProdutoBody"></div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-      </div>
-    </div>
-  </div>
-
-</div>
 </body>
 </html>
