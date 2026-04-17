@@ -1,0 +1,88 @@
+@import '_variaveis.scss';
+
+// Estilos base
+body {
+  font-family: $fonte-principal;
+  font-size: $fonte-tamanho-base;
+  font-style: $font-style-base;
+  font-weight: $font-weight-normal;
+  color: var(--cor-texto, $cor-texto);
+  background-color: var(--cor-fundo, $cor-fundo);
+  line-height: $fonte-espacamento;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $fonte-titulo;
+  color: var(--cor-texto, $cor-texto);
+  font-weight: $font-weight-bold;
+}
+
+a {
+  color: var(--cor-link, $cor-link);
+  &:hover {
+    color: var(--cor-link-hover, $cor-link-hover);
+  }
+}
+
+// Layout responsivo
+.carousel {
+  height: $altura-carousel;
+}
+
+@media (max-width: 768px) {
+  .carousel {
+    height: 300px; // Altura reduzida para mobile
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel {
+    height: 250px;
+  }
+}
+
+// Temas
+:root {
+  --cor-primaria: #{$cor-primaria};
+  --cor-fundo: #{$cor-fundo};
+  --cor-texto: #{$cor-texto};
+  --cor-link: #{$cor-link};
+  --cor-link-hover: #{$cor-link-hover};
+}
+
+.tema-warm {
+  --cor-primaria: #{$cor-primaria-warm};
+  --cor-fundo: #{$cor-fundo-warm};
+  --cor-texto: #{$cor-texto-warm};
+  --cor-link: #{$cor-link-warm};
+  --cor-link-hover: #{$cor-link-hover-warm};
+}
+
+.tema-cool {
+  --cor-primaria: #{$cor-primaria-cool};
+  --cor-fundo: #{$cor-fundo-cool};
+  --cor-texto: #{$cor-texto-cool};
+  --cor-link: #{$cor-link-cool};
+  --cor-link-hover: #{$cor-link-hover-cool};
+}
+
+.tema-dark {
+  --cor-fundo: #{$cor-fundo-dark};
+  --cor-texto: #{$cor-texto-dark};
+}
+
+.tema-nature {
+  --cor-primaria: #{$cor-primaria-nature};
+  --cor-fundo: #{$cor-fundo-nature};
+  --cor-texto: #{$cor-texto-nature};
+  --cor-link: #{$cor-link-nature};
+  --cor-link-hover: #{$cor-link-hover-nature};
+}
+
+.tema-tech {
+  --cor-primaria: #{$cor-primaria-tech};
+  --cor-fundo: #{$cor-fundo-tech};
+  --cor-texto: #{$cor-texto-tech};
+  --cor-link: #{$cor-link-tech};
+  --cor-link-hover: #{$cor-link-hover-tech};
+}

@@ -1,11 +1,23 @@
 // api.js — funções de comunicação com a internet (Passos 18 e 20)
 
 export async function carregarDepoimentos() {
-  const resposta = await fetch(
-    "https://jsonplaceholder.typicode.com/comments?_limit=3",
-  );
-  const dados = await resposta.json();
-  return dados;
+  return [
+    {
+      name: "Mariana Silva",
+      site: "www.lojasdemoda.com.br",
+      body: "O site é muito fácil de navegar e o processo de compra foi super rápido. Recomendo para quem busca moda com entrega ágil.",
+    },
+    {
+      name: "Carlos Pereira",
+      site: "www.cursosonline.com.br",
+      body: "A área do aluno é clara e o conteúdo funciona muito bem no celular. Consegui estudar no meu tempo sem dificuldades.",
+    },
+    {
+      name: "Ana Souza",
+      site: "www.supermercado24h.com.br",
+      body: "Adorei o layout e a busca por produtos. O carrinho ficou organizado e o checkout foi simples de usar.",
+    },
+  ];
 }
 
 export async function enviarFormulario(nome, email, mensagem) {

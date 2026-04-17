@@ -10,7 +10,7 @@ export function renderizarDepoimentos(dados) {
       <div class="card h-100">
         <div class="card-body">
           <h5 class="card-title">${item.name}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">${item.email}</h6>
+          <h6 class="card-subtitle mb-2 text-muted">${item.site}</h6>
           <p class="card-text">${item.body}</p>
         </div>
       </div>

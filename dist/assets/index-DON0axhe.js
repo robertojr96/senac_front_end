@@ -30,12 +30,13 @@ var e = (e, t) => () => (e && (t = e((e = 0))), t),
     fetch(e.href, n);
   }
 })();
-async function n() {
+var n = e(() => {});
+async function r() {
   return await (
     await fetch(`https://jsonplaceholder.typicode.com/comments?_limit=3`)
   ).json();
 }
-async function r(e, t, n) {
+async function i(e, t, n) {
   let r = JSON.stringify({ title: e, body: n, email: t, userId: 1 });
   return await fetch(`https://jsonplaceholder.typicode.com/posts`, {
     method: `POST`,
@@ -43,8 +44,8 @@ async function r(e, t, n) {
     body: r,
   });
 }
-var i = e(() => {});
-function a(e) {
+var a = e(() => {});
+function o(e) {
   let t = document.getElementById(`lista-depoimentos`);
   t &&
     (t.innerHTML = e
@@ -63,27 +64,27 @@ function a(e) {
       )
       .join(``));
 }
-function o(e, t) {
+function s(e, t) {
   t &&
     (t.innerHTML = e
       ? `<div class="alert alert-success">Mensagem enviada com sucesso!</div>`
       : `<div class="alert alert-danger">Erro ao enviar. Tente novamente.</div>`);
 }
-var s = e(() => {});
+var c = e(() => {});
 t(() => {
-  (i(), s());
+  (n(), a(), c());
   var e = document.getElementById(`lista-depoimentos`);
   e &&
-    n()
-      .then((e) => a(e))
+    r()
+      .then((e) => o(e))
       .catch(() => {
         e.innerHTML = `<p>Não foi possível carregar os depoimentos.</p>`;
       });
   var t = document.getElementById(`btn-enviar`),
-    c = document.getElementById(`campo-cep`);
-  (c &&
-    c.addEventListener(`input `, async () => {
-      let e = c.value.replace(/\D/g, ``);
+    l = document.getElementById(`campo-cep`);
+  (l &&
+    l.addEventListener(`input `, async () => {
+      let e = l.value.replace(/\D/g, ``);
       if (e.length !== 8) return;
       let t = await (await fetch(`https://viacep.com.br/ws/${e}/json/`)).json();
       t.erro ||
@@ -97,11 +98,11 @@ t(() => {
         let e = document.getElementById(`campo-nome`).value,
           t = document.getElementById(`campo-email`).value,
           n = document.getElementById(`campo-mensagem`).value,
-          i = document.getElementById(`feedback-form`);
+          r = document.getElementById(`feedback-form`);
         try {
-          o((await r(e, t, n)).status === 201, i);
+          s((await i(e, t, n)).status === 201, r);
         } catch {
-          o(!1, feedbackContainerr);
+          s(!1, r);
         }
       }));
 })();

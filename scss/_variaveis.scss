@@ -1,0 +1,83 @@
+// Variáveis de cores
+$cor-primaria: #007bff;
+$cor-secundaria: #6c757d;
+$cor-sucesso: #28a745;
+$cor-perigo: #dc3545;
+$cor-aviso: #ffc107;
+$cor-fundo: #f8f9fa;
+$cor-texto: #212529;
+$cor-link: #007bff;
+$cor-link-hover: darken($cor-link, 10%);
+
+// Tipografia
+$fonte-principal: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$fonte-titulo: 'Georgia', serif;
+$fonte-tamanho-base: 16px;
+$fonte-tamanho-titulo: 24px;
+$fonte-tamanho-subtitulo: 18px;
+$fonte-p: 14px;
+$fonte-espacamento: 1.5;
+$font-style-base: normal;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+$font-color-base: $cor-texto;
+$font-color-heading: $cor-texto;
+$font-color-link: $cor-link;
+
+// Layout
+$altura-carousel: 500px;
+$altura-produto: 220px;
+$padding-carousel: 20px;
+$raio-card: 8px;
+$espacamento-base: 1rem;
+
+// Tema dark
+$cor-fundo-dark: #343a40;
+$cor-texto-dark: #f8f9fa;
+$cor-card-dark: #495057;
+$cor-sombra-dark: rgba(0, 0, 0, 0.5);
+
+// Tema Warm
+$cor-primaria-warm: #a8a4a4;
+$cor-secundaria-warm: #f7931e;
+$cor-sucesso-warm: #28a745;
+$cor-perigo-warm: #dc3545;
+$cor-aviso-warm: #ffc107;
+$cor-fundo-warm: #d3332d;
+$cor-texto-warm: #212529;
+$cor-link-warm: #ff6b35;
+$cor-link-hover-warm: darken($cor-link-warm, 10%);
+
+// Tema Cool
+$cor-primaria-cool: #4a90e2;
+$cor-secundaria-cool: #7ed321;
+$cor-sucesso-cool: #28a745;
+$cor-perigo-cool: #dc3545;
+$cor-aviso-cool: #ffc107;
+$cor-fundo-cool: #e8f4fd;
+$cor-texto-cool: #212529;
+$cor-link-cool: #4a90e2;
+$cor-link-hover-cool: darken($cor-link-cool, 10%);
+
+// Tema Nature
+$cor-primaria-nature: #065a2a;
+$cor-secundaria-nature: #8fbc8f;
+$cor-sucesso-nature: #28a745;
+$cor-perigo-nature: #dc3545;
+$cor-aviso-nature: #ffc107;
+$cor-fundo-nature: #f0f8f0;
+$cor-texto-nature: #2f4f2f;
+$cor-link-nature: #2e8b57;
+$cor-link-hover-nature: darken($cor-link-nature, 10%);
+
+// Tema Tech
+$cor-primaria-tech: #09d2ec;
+$cor-secundaria-tech: #607d8b;
+$cor-sucesso-tech: #4caf50;
+$cor-perigo-tech: #f44336;
+$cor-aviso-tech: #ff9800;
+$cor-fundo-tech: #34b6dd;
+$cor-texto-tech: #212121;
+$cor-link-tech: #00bcd4;
+$cor-link-hover-tech: darken($cor-link-tech, 10%);
+

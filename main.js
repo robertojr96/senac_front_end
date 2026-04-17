@@ -1,5 +1,6 @@
 // main.js — arquivo principal: importa módulos e registra Event Listeners (Passo 21)
 
+import "./scss/style.scss";
 import { carregarDepoimentos, enviarFormulario } from "./api.js";
 import { renderizarDepoimentos, exibirAlertaForm } from "./ui.js";
 
@@ -49,3 +50,12 @@ if (btnEnviar) {
     }
   });
 }
+
+// Troca de temas
+document.querySelectorAll("[data-theme]").forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const theme = e.target.getAttribute("data-theme");
+    document.body.className = theme === "default" ? "" : theme;
+  });
+});
